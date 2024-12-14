@@ -1,9 +1,13 @@
-import { isAxiosError } from 'axios';
+import axios, { isAxiosError } from 'axios';
 
 function handleAxiosError(err: unknown) {
   if (isAxiosError(err)) {
     const status = err.response?.status;
     const errorMessage = err.response?.data?.message || err.message;
+
+    if (axios.isCancel(err)) {
+      return;
+    }
 
     switch (status) {
       case 400:
