@@ -41,7 +41,7 @@ export type RetrieveBookDetailResponseBody = ApiResponse<{
 
 export type AddBookItemParams = {};
 
-export type AddBookItemRequestBody = Book;
+export type AddBookItemRequestBody = Omit<Book, 'bookId'>;
 
 export type AddBookItemResponseBody = ApiResponse<{}>;
 
