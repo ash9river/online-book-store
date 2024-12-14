@@ -20,12 +20,6 @@ function BookListContainer() {
   }
 
   useEffect(() => {
-    console.log(title);
-    console.log(author);
-  }, [title, author]);
-
-  useEffect(() => {
-    console.log(bookList);
     if (bookList?.data?.books.length === 0) {
       setPageNumber(1);
     }
