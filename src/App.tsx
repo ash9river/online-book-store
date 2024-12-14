@@ -1,29 +1,50 @@
-import MainLayout from 'layouts/MainLayout';
-import BookList from 'pages/BookList';
-import Home from 'pages/Home';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import BookDetailEdit from './pages/BookDetailEdit';
+import MainLayout from './layouts/MainLayout';
+import BookDetail from './pages/BookDetail';
+import BookList from './pages/BookList';
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from 'react-router-dom';
+import BookAdd from './pages/BookAdd';
+import ErrorPage from './pages/ErroePage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
-    // errorElement: <ErrorPage />, 에러 페이지 들어가야함
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Navigate to="books" replace />,
       },
       {
-        path: 'dashboard',
-        element: <BookList />,
-      },
-      {
-        path: 'course',
-        element: <CoursePage />,
-      },
-      {
-        path: 'facility',
-        element: <FacilityPage />,
+        path: 'books',
+        children: [
+          {
+            index: true,
+            element: <BookList />,
+          },
+          {
+            path: ':id',
+            children: [
+              {
+                index: true,
+                element: <BookDetail />,
+              },
+              {
+                path: 'edit',
+                element: <BookDetailEdit />,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <BookAdd />,
+          },
+        ],
       },
     ],
   },
