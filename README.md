@@ -264,3 +264,28 @@ export default useSearchParamsStore;
 
 리스트로 된 책 컴포넌트입니다.
 
+<br/>
+
+## 화면 구성
+
+
+### 책 목록 페이지
+
+![책 목록](https://github.com/user-attachments/assets/d08d129a-c2cb-4bb1-9a72-bbc501e456ec)
+
+
+### 책 상세 정보
+
+![책 상세정보](https://github.com/user-attachments/assets/e751ea6b-02dd-4360-81e6-0be992f3b30f)
+
+### 책 정보 수정
+
+![책 정보 수정](https://github.com/user-attachments/assets/dac2ee77-34c0-4c25-8881-0febe81a7679)
+
+
+### 책 추가
+
+![책 추가](https://github.com/user-attachments/assets/346fc870-e77a-450a-af10-823281fd25e7)
+
+  
+
